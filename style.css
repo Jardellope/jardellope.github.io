@@ -1,102 +1,99 @@
-  /* Reset */
-* { margin: 0; padding: 0; box-sizing: border-box; }
-
-body {
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   font-family: Arial, sans-serif;
-  line-height: 1.6;
-  background: linear-gradient(135deg, #e0f7fa, #f9f9f9);
-  color: #333;
 }
 
 /* Navbar */
 header {
   background: #000;
-  padding: 12px 20px;
+  color: #0f0;
+  padding: 10px 20px;
+}
+
+.navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-header .logo {
+.navbar .logo {
   display: flex;
   align-items: center;
 }
 
-header .logo img {
+.navbar .logo img {
   height: 40px;
   margin-right: 10px;
-}
-
-header .logo span {
-  font-size: 1.4em;
-  font-weight: bold;
-  color: #00ff99;
 }
 
 .navbar .nav-links {
   list-style: none;
   display: flex;
-  gap: 15px;
+}
+
+.navbar .nav-links li {
+  margin-left: 20px;
 }
 
 .navbar .nav-links a {
-  color: white;
+  color: #fff;
   text-decoration: none;
   font-weight: bold;
 }
 
 .navbar .nav-links a:hover {
-  color: #00ff99;
+  color: #0f0;
 }
 
-/* Hero */
+/* Hero Section */
 .hero {
-  background: url("img/earth.jpg") no-repeat center center/cover;
-  height: 90vh;
+  height: 100vh;
+  background: url("img/earth.png") no-repeat center center fixed;
+  background-size: cover;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  color: white;
+  color: #fff;
   padding: 20px;
 }
 
 .hero h1 {
-  font-size: 2.8em;
-  margin-bottom: 15px;
+  font-size: 2.5em;
+  margin-bottom: 20px;
   text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
 }
 
 .hero p {
   font-size: 1.2em;
   margin-bottom: 20px;
-  text-shadow: 1px 1px 5px rgba(0,0,0,0.7);
+  text-shadow: 1px 1px 6px rgba(0,0,0,0.6);
 }
 
-.btn {
-  background: #00ff99;
-  color: black;
-  padding: 12px 25px;
+.hero .btn {
+  background: #0f0;
+  padding: 10px 20px;
+  border-radius: 5px;
   text-decoration: none;
-  border-radius: 8px;
   font-weight: bold;
-  transition: 0.3s;
+  color: #000;
 }
 
-.btn:hover {
-  background: #00cc77;
+.hero .btn:hover {
+  background: #09a809;
+  color: #fff;
 }
 
-/* Seções */
+/* Sections */
 section {
   padding: 50px 20px;
-  max-width: 900px;
-  margin: 30px auto;
-  background: white;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
   text-align: center;
 }
 
-section h2 { margin-bottom: 15px; }
+h2 {
+  font-size: 2em;
+  margin-bottom: 15px;
+  }
