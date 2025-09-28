@@ -5,16 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Neuro Earth</title>
   <link rel="stylesheet" href="style.css">
-  <script src="script.js" defer></script>
+  <script defer src="script.js"></script>
 </head>
 <body>
   <!-- Navbar -->
   <header>
-    <div class="logo">
-      <img src="img/logo.png" alt="Logo Neuro Earth">
-      <span>Neuro Earth</span>
-    </div>
     <nav class="navbar">
+      <div class="logo">
+        <img src="img/logo.png" alt="Logo Neuro Earth">
+        <span>Neuro Earth</span>
+      </div>
       <ul class="nav-links">
         <li><a href="#sobre">Sobre</a></li>
         <li><a href="#visao">Visão</a></li>
@@ -24,37 +24,42 @@
     </nav>
   </header>
 
-  <!-- Hero -->
+  <!-- Hero Section -->
   <section class="hero">
-    <h1>O Futuro da Sustentabilidade</h1>
-    <p>A Neuro Earth conecta inovação digital com impacto positivo no planeta.</p>
-    <a href="#contato" class="btn">Fale Conosco</a>
+    <div class="hero-text">
+      <h1>O Futuro da Sustentabilidade e Tecnologia</h1>
+      <p>A Neuro Earth conecta inovação digital com impacto positivo no planeta.</p>
+      <a href="#contato" class="btn">Fale Conosco</a>
+    </div>
+  </section>
+
+  <!-- Status API -->
+  <section id="status">
+    <h2>Status da API: <span id="api-status">⏳</span></h2>
   </section>
 
   <!-- Sobre -->
   <section id="sobre">
-    <h2>Status da API: <span id="status">⏳ Verificando...</span></h2>
+    <h2>Missão</h2>
+    <p>Transformar tecnologia em soluções sustentáveis.</p>
   </section>
 
   <!-- Visão -->
   <section id="visao">
-    <h2>Missão</h2>
-    <p>Transformar tecnologia em soluções sustentáveis.</p>
     <h2>Objetivo</h2>
     <p>Conectar pessoas ao planeta com inovação.</p>
   </section>
 
   <!-- Clima -->
   <section id="clima">
-    <h2>🌦️ Monitoramento Climático</h2>
-    <p id="climaInfo">Carregando...</p>
-    <img id="climaIcon" alt="Ícone do clima" style="width:60px; display:none;">
+    <h2>Monitoramento Climático</h2>
+    <p>Temperatura atual: <span id="temperatura">⏳</span> 🌍</p>
   </section>
 
   <!-- Contato -->
   <section id="contato">
     <h2>Contato</h2>
-    <p>Email: <a href="mailto:jardelmiguellopes03@gmail.com">jardelmiguellopes03@gmail.com</a></p>
+    <p>Fale conosco para saber mais sobre nossas soluções.</p>
   </section>
 </body>
-  </html>
+    </html>
