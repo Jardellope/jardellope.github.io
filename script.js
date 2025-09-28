@@ -1,15 +1,22 @@
-// Status da API
-document.getElementById("api-status").innerHTML = "✅ Online";
+// Clima dinâmico
+const apiKey = "https://api.open-meteo.com/v1/forecast?latitude=-23.55&longitude=-46.63&current_weather=true";
 
-// Clima (API Open-Meteo)
-async function getClima() {
+async function getWeather() {
   try {
-    let response = await fetch("https://api.open-meteo.com/v1/forecast?latitude=-23.55&longitude=-46.63&current_weather=true");
-    let data = await response.json();
-    document.getElementById("temperatura").innerHTML = data.current_weather.temperature + "°C";
+    const response = await fetch(apiKey);
+    const data = await response.json();
+    const temp = data.current_weather.temperature;
+    document.getElementById("weather").innerText = `Temperatura atual: ${temp}°C 🌍`;
   } catch (error) {
-    document.getElementById("temperatura").innerHTML = "❌ Erro";
+    document.getElementById("weather").innerText = "Não foi possível carregar o clima.";
   }
 }
 
-getClima();
+getWeather();
+
+// Simulação de envio do formulário
+document.querySelector(".contact-form").addEventListener("submit", function(e) {
+  e.preventDefault();
+  alert("Mensagem enviada com sucesso! 🚀");
+  this.reset();
+});
