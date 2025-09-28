@@ -1,32 +1,15 @@
-// 🔑 Substitua pela sua chave do OpenWeatherMap
-const API_KEY = "SUA_CHAVE_API";
-const CITY = "São Paulo"; // pode trocar para outra cidade
+// Status da API
+document.getElementById("api-status").innerHTML = "✅ Online";
 
-async function getWeather() {
+// Clima (API Open-Meteo)
+async function getClima() {
   try {
-    const response = await fetch(
-      `https://api.openweathermap.org/data/2.5/weather?q=${CITY}&appid=${API_KEY}&units=metric&lang=pt_br`
-    );
-    const data = await response.json();
-
-    if (data.main) {
-      const temp = Math.round(data.main.temp);
-      const description = data.weather[0].description;
-      const iconCode = data.weather[0].icon;
-
-      document.getElementById("climaInfo").textContent =
-        `Temperatura em ${CITY}: ${temp}°C, ${description}`;
-
-      const iconUrl = `https://openweathermap.org/img/wn/${iconCode}@2x.png`;
-      const climaIcon = document.getElementById("climaIcon");
-      climaIcon.src = iconUrl;
-      climaIcon.style.display = "inline";
-    } else {
-      document.getElementById("climaInfo").textContent = "Não foi possível carregar o clima.";
-    }
+    let response = await fetch("https://api.open-meteo.com/v1/forecast?latitude=-23.55&longitude=-46.63&current_weather=true");
+    let data = await response.json();
+    document.getElementById("temperatura").innerHTML = data.current_weather.temperature + "°C";
   } catch (error) {
-    document.getElementById("climaInfo").textContent = "Erro ao obter dados do clima.";
+    document.getElementById("temperatura").innerHTML = "❌ Erro";
   }
 }
 
-getWeather();
+getClima();
